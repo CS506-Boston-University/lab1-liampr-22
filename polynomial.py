@@ -27,7 +27,7 @@ class Int:
         # TODO: Implement evaluation for integer constant
         # Should return an Int object with the stored integer value
         return self
-    
+
     def simplify(self):
         # TODO (Optional Exercise): Implement simplification
         # Integer constants cannot be simplified further, so return self
@@ -126,12 +126,12 @@ class Div:
         # Hint: Look at how Mul class handles parentheses
         if isinstance(self.p1, (Add, Sub)):
             if isinstance(self.p2, (Add, Sub)):
-                return "( " + repr(self.p1) + " ) / ( " + repr(self.p2) + " )" 
+                return "( " + repr(self.p1) + " ) / ( " + repr(self.p2) + " )"
             return "( " + repr(self.p1) + " ) / " + repr(self.p2)
         if isinstance(self.p2, (Add, Sub)):
             return repr(self.p1) + " / " + repr(self.p2)
         return repr(self.p1) + " / " + repr(self.p2)
-        
+
     def evaluate(self, x_value):
         # TODO: Implement evaluation for division
         # Should return the quotient of the two operands (use integer division //)
